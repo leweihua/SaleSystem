@@ -141,6 +141,12 @@ void CSellDlg::OnBnClickedButton2()
 		MessageBox(TEXT("购买数量不能大于库存量"));
 		return;
 	}
+	//检查购买数量是否为小数
+	if (m_num-(int)m_num)
+	{
+		MessageBox(TEXT("购买数量不能为小数"));
+		return;
+	}
 
 	//购买
 	//获取到具体要买的商品名称
