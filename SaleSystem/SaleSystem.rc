@@ -70,9 +70,13 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\SaleSystem.ico"
+
 IDR_SaleSystemTYPE      ICON                    "res\\SaleSystemDoc.ico"
+
 IDI_ICON_RE             ICON                    "res\\re.ico"
+
 IDI_ICON_WIN            ICON                    "res\\user.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -222,6 +226,21 @@ BEGIN
     PUSHBUTTON      "取消",IDC_BUTTON6,245,134,50,14
 END
 
+DIALOG_DEL DIALOGEX 0, 0, 352, 204
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "删除商品",IDC_STATIC,68,31,216,142
+    LTEXT           "商品名：",IDC_STATIC,117,61,35,8
+    LTEXT           "单价：",IDC_STATIC,125,90,27,8
+    LTEXT           "个数：",IDC_STATIC,125,119,27,8
+    EDITTEXT        IDC_EDIT2,165,88,69,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,164,115,69,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "确定",IDC_BUTTON2,117,150,50,14
+    PUSHBUTTON      "取消",IDC_BUTTON7,184,150,50,14
+    COMBOBOX        IDC_COMBO2,165,60,69,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -317,8 +336,27 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 174
     END
+
+    DIALOG_DEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 197
+    END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+DIALOG_DEL AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////

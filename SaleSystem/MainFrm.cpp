@@ -12,6 +12,7 @@
 #include "UserDlg.h"
 #include "SellDlg.h"
 #include "AddDlg.h"
+#include "CDelDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -180,6 +181,18 @@ LRESULT CMainFrame::OnMyChange(WPARAM wParam, LPARAM lParam)
 		m_spliter.DeleteView(0, 1);
 		m_spliter.CreateView(0, 1, RUNTIME_CLASS(CAddDlg), CSize(600, 500), &Context);
 		CAddDlg *pNewView = (CAddDlg *)m_spliter.GetPane(0, 1);
+		m_spliter.RecalcLayout();
+		pNewView->OnInitialUpdate();
+		m_spliter.SetActivePane(0, 1);
+	}
+	else if (wParam == NM_E) {
+		//CDelDlg类需要包含头文件#include "DelDlg.h"
+		Context.m_pNewViewClass = RUNTIME_CLASS(CDelDlg);
+		Context.m_pCurrentFrame = this;
+		Context.m_pLastView = (CFormView *)m_spliter.GetPane(0, 1);
+		m_spliter.DeleteView(0, 1);
+		m_spliter.CreateView(0, 1, RUNTIME_CLASS(CDelDlg), CSize(600, 0), &Context);
+		CDelDlg *pNewView = (CDelDlg *)m_spliter.GetPane(0, 1);
 		m_spliter.RecalcLayout();
 		pNewView->OnInitialUpdate();
 		m_spliter.SetActivePane(0, 1);

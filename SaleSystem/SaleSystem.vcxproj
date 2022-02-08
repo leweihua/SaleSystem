@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddDlg.h" />
+    <ClInclude Include="CDelDlg.h" />
     <ClInclude Include="DispalyView.h" />
     <ClInclude Include="InfoFile.h" />
     <ClInclude Include="LoginDlg.h" />
@@ -119,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddDlg.cpp" />
+    <ClCompile Include="CDelDlg.cpp" />
     <ClCompile Include="DispalyView.cpp" />
     <ClCompile Include="InfoFile.cpp" />
     <ClCompile Include="LoginDlg.cpp" />
